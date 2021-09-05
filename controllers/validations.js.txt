@@ -1,0 +1,5 @@
+const validaciones = {};
+
+isEmail
+
+export default validaciones;
