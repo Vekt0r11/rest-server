@@ -1,8 +1,0 @@
-//Validaciones para los controladores
-//Ex: validar correo, username, password, etc
-
-const validaciones = {};
-
-isEmail
-
-export default validaciones;
