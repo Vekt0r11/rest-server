@@ -1,13 +1,18 @@
 const express = require('express');
 const morgan = require('morgan');
-const path = require('path');
+/* const path = require('path'); */
+const helmet = require('helmet');
+const cors = require('cors');
+require('dotenv').config();
 
 const app = express();
-const port = 4000;
+const port = process.env.PORT || 4000;
 require('./database');
 
 
 //Middleware
+app.use(helmet());
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(morgan('dev'));
@@ -22,6 +27,8 @@ app.use(morgan('dev'));
 
 //rutas
 app.use(require('./routes/user.route'));
+app.use(require('./routes/student.route'));
+
 
 app.listen(port, () => {
     console.log("Servidor corriendo en el puerto "+port);

@@ -1,7 +1,6 @@
 const User = require('../models/Users.js');
 const userCtrl = {};
 const { generar_jwt } = require('../helpers/generarjwt.js');
-const Users = require('../models/Users.js');
 const { validationResult } = require('express-validator'); 
 
 
@@ -22,7 +21,7 @@ userCtrl.newUser = async (req, res) => {
 
     await newData.save();
 
-    res.send('Datos cargados');
+    res.send('Datos del usuario cargados');
 };
 
 

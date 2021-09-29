@@ -1,4 +1,4 @@
-const {Schema, model} = require("mongoose");
+ const {Schema, model} = require("mongoose");
 
 const StudentSchema = new Schema({
 
@@ -13,7 +13,8 @@ const StudentSchema = new Schema({
         },
         middleName: {
             type: String,
-            required: false
+            required: false,
+            default: ""
         },
         lastName: {
             type: String,
@@ -43,7 +44,8 @@ const StudentSchema = new Schema({
         },
         street: {
             type: String,
-            required: true
+            required: false,
+            default: "S/N"
         },
         houseNumber: {
             type: Number,
@@ -51,7 +53,8 @@ const StudentSchema = new Schema({
         },
         references: {
             type: String,
-            required: false
+            required: false,
+            default: ""
         }
     },
     contactInfo: {
@@ -61,7 +64,8 @@ const StudentSchema = new Schema({
         },
         instagramAt: {
             type: String,
-            required: false
+            required: false,
+            default: ""
         },
         cellphone: {
             type: Number,
@@ -73,25 +77,23 @@ const StudentSchema = new Schema({
         },
         secondaryMail: {
             type: String,
-            required: false
+            required: false,
+            default: ""
         }
     },
     academicInfo: {
-        primaryStudy: {
+        primaryFinished: {
             type: Boolean,
             required: true
         },
-        secondaryStudy: {
+        secondaryFinished: {
             type: Boolean,
             required: true
         },
-        tertiaryStudies: {
-            type: Boolean,
-            required: true
-        },
-        tertiaryTitles: {
+        tertiaryDegrees: {
             type: String,
-            required: false
+            required: false,
+            default: ""
         }
     }
 });
