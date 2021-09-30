@@ -21,6 +21,16 @@ studentCtrl.newStudent = async (req, res) => {
     await newData.save();
 
     res.send('Datos del estudiante cargados');
-}
+};
+
+studentCtrl.getStudents = async (req, res) => {
+  const students = await Student.find({isActive: true});
+
+  if(students.length < 1) {
+      res.json({msg: "No se encontró ningun estudiante"})
+  } else {
+      res.json(students);
+  };
+};
 
 module.exports = studentCtrl;
